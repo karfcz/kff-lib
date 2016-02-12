@@ -1,0 +1,26 @@
+{
+  "name": "kff-lib",
+  "version": "0.0.1",
+  "private": true,
+  "main": "./main.js",
+  "browserify": {
+    "transform": [
+      "envify", "babelify"
+    ]
+  },
+   "dependencies": {
+    "envify": "^3.0.0",
+    "babelify": "^6.1.2"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-browserify": "^4.0.1",
+    "grunt-concurrent": "^1.0.1",
+    "grunt-contrib-stylus": "^0.22.0",
+    "grunt-contrib-uglify": "~0.2.2",
+    "grunt-contrib-watch": "~0.4.4",
+    "grunt-env": "^0.4.4",
+    "html2js-browserify": "0.0.2",
+    "kff": "git://github.com/karfcz/kff.git#5d46e3cb4469f65ef6fc9942868dae9d635d2ad4"
+  }
+}

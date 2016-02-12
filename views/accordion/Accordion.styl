@@ -1,0 +1,59 @@
+.accordion
+	> .item
+		> .head
+			font-family: fontFamilyHeading
+			padding: 10px 125px
+			position: relative
+			cursor: pointer
+			border-bottom: 1px solid #cceaf6
+			icon-after: arrow-accordion-down right middle 125px 0 (14/32)
+			transition: background-color 0.3s
+			&:hover
+				background: #e5f4fa
+		> .body
+			height: 0
+			overflow: hidden
+			&.animated
+				transition: height 0.3s
+			> .content
+				padding: 20px 125px
+				background: #e5f4fa
+				border-bottom: 1px solid #cceaf6
+				&.p-null
+					padding: 1px
+		&.expanded
+			margin-bottom: 2px
+			>.head
+				border-bottom: 1px solid #e5f4fa
+				margin-bottom: 0
+				background: #e5f4fa
+				icon-after: arrow-accordion-up right middle 125px 0 (14/32)
+
+
+@media only screen and (max-width: tabletMaxWidth)
+	.accordion
+		> .item
+			> .head
+				padding: 10px 50px
+				icon-after: arrow-accordion-down right middle 50px 0 (14/32)
+			> .body
+				> .content
+					padding: 20px 50px
+
+			&.expanded
+				>.head
+					icon-after: arrow-accordion-up right middle 50px 0 (14/32)
+
+@media only screen and (max-width: mobileMaxWidth)
+	.accordion
+		> .item
+			> .head
+				padding: 10px 15px
+				padding-right: 30px
+				icon-after: arrow-accordion-down right middle 10px 0 (14/32)
+			> .body
+				> .content
+					padding: 10px 15px
+			&.expanded
+				>.head
+					icon-after: arrow-accordion-up right middle 10px 0 (14/32)

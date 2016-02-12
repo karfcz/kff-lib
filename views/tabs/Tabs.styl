@@ -1,0 +1,77 @@
+/* Tabs */
+.tabs.com
+	margin-bottom: 0
+	margin-top: 30px
+	// margin-left: -20px
+	// margin-right: -20px
+	position: relative
+	ul
+		display: table
+		border-collapse: separate
+		margin: 0 auto
+		padding: 0
+		width: 100%
+		table-layout: fixed
+		text-align: center
+		border: 0
+		box-sizing: border-box
+		border-bottom: 10px solid #0095d2
+
+		> li
+			display: table-cell
+			margin: 0
+			padding: 0
+			vertical-align: bottom
+			before-none()
+			+ li
+				padding-left: 10px
+			a
+				display: block
+				box-sizing: border-box
+				background: #e5f4fa
+				padding: 22px 20px
+				border-radius: 0
+				font-family: fontFamilyHeading
+				font-size: 21px
+				line-height: normal
+				text-align: center
+				text-decoration: none
+				outline: 0
+				cursor: pointer
+				position: relative
+				color: #284e75
+			&.active a
+				padding-top: 32px
+				z-index: 2
+				background: #0095d2
+				color: #fff
+				// font-weight: bold
+				position: relative
+	select.full
+		margin-bottom: 10px
+
+@media (max-width: mobileMaxWidth)
+	.tabs.com
+		ul
+			border-bottom: 5px solid #0095d2
+			> li
+				+ li
+					padding-left: 5px
+				a
+					padding: 10px 5px
+					font-size: 15px
+				&.active a
+					padding-top: 15px
+
+.tabpanes.com
+	transform: translate3d(0,0,0)
+	background: #fff
+	margin: 0 -20px 30px
+	padding:  0 20px
+	.tabpane.com
+		padding: 40px 0 0
+
+@media (max-width: mobileMaxWidth)
+	.tabpanes.com
+		.tabpane.com
+			padding: 20px 0
