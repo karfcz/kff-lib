@@ -8,7 +8,7 @@ export default class Tabs extends View
 	constructor(options)
 	{
 		super(options);
-		this.mobileMaxWidth = 680;
+		this.mobileMaxWidth = options.mobileMaxWidth || 680;
 	}
 
 	render()
@@ -16,7 +16,7 @@ export default class Tabs extends View
 		var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 
 		var model = this.options.model;
-		var maxMobileTabs = this.$element[0].getAttribute('data-max-mobile-tabs');
+		var maxMobileTabs = this.element.getAttribute('data-max-mobile-tabs');
 		if(maxMobileTabs) maxMobileTabs = parseInt(maxMobileTabs);
 		else maxMobileTabs = 3;
 
@@ -33,9 +33,8 @@ export default class Tabs extends View
 			});
 		}
 
-		this.scope.tabs.setIn('active', parseInt(this.$element[0].getAttribute('data-activetab')) || 1 );
+		this.scope.tabs.setIn('active', parseInt(this.element.getAttribute('data-activetab')) || 1 );
 
-		// this.$lis = this.$element.find('.tabs.com li');
 		this.lis = this.element.querySelectorAll('.tabs.com li');
 
 		if(width < this.mobileMaxWidth && this.lis.length > maxMobileTabs)
