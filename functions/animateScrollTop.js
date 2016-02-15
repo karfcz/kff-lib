@@ -17,7 +17,7 @@ const easeLinear = pos => pos;
  * @param  {Number} duration       duration of the animation
  * @param  {Function} easing       easing function
  */
-export default function animateScrollTop(scrollTargetY, duration, easing)
+export default function animateScrollTop(scrollTargetY, duration, easing, callback)
 {
 	var scrollY = window.scrollY || (document.documentElement ? document.documentElement.scrollTop : 0) || document.body.scrollTop,
 		scrollTargetY = scrollTargetY || 0,
@@ -40,6 +40,7 @@ export default function animateScrollTop(scrollTargetY, duration, easing)
 		else
 		{
 			window.scrollTo(0, scrollTargetY);
+			if(typeof callback === 'function') callback();
 		}
 	}
 
